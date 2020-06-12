@@ -167,14 +167,11 @@ f_negative_p(VALUE x)
 #define HAVE_DF     (1 << 1)
 #define HAVE_CIVIL  (1 << 2)
 #define HAVE_TIME   (1 << 3)
-#define COMPLEX_DAT (1 << 7)
 
 #define have_jd_p(x) ((x)->flags & HAVE_JD)
 #define have_df_p(x) ((x)->flags & HAVE_DF)
 #define have_civil_p(x) ((x)->flags & HAVE_CIVIL)
 #define have_time_p(x) ((x)->flags & HAVE_TIME)
-#define complex_dat_p(x) 1 /* ((x)->flags & COMPLEX_DAT) */
-#define simple_dat_p(x) (!complex_dat_p(x))
 
 #define ITALY 2299161 /* 1582-10-15 */
 #define ENGLAND 2361222 /* 1752-09-14 */
@@ -246,26 +243,6 @@ f_negative_p(VALUE x)
  * midnight.
  */
 
-struct SimpleDateData
-{
-    unsigned flags;
-    int jd;	/* as utc */
-    VALUE nth;	/* not always canonicalized */
-    date_sg_t sg;  /* 2298874..2426355 or -/+oo -- at most 22 bits */
-    /* decoded as utc=local */
-    int year;	/* truncated */
-#ifndef USE_PACK
-    int mon;
-    int mday;
-    /* hour is zero */
-    /* min is zero */
-    /* sec is zero */
-#else
-    /* packed civil */
-    unsigned pc;
-#endif
-};
-
 struct ComplexDateData
 {
     unsigned flags;
@@ -291,7 +268,6 @@ struct ComplexDateData
 
 union DateData {
     unsigned flags;
-    struct SimpleDateData s;
     struct ComplexDateData c;
 };
 
@@ -332,7 +308,7 @@ do {\
     (x)->year = _year;\
     (x)->mon = _mon;\
     (x)->mday = _mday;\
-    (x)->flags = (_flags) & ~COMPLEX_DAT;\
+    (x)->flags = (_flags);\
 } while (0)
 #else
 #define set_to_simple(obj, x, _nth, _jd ,_sg, _year, _mon, _mday, _flags) \
@@ -342,7 +318,7 @@ do {\
     (x)->sg = (date_sg_t)(_sg);\
     (x)->year = _year;\
     (x)->pc = PACK2(_mon, _mday);\
-    (x)->flags = (_flags) & ~COMPLEX_DAT;\
+    (x)->flags = (_flags);\
 } while (0)
 #endif
 
@@ -362,7 +338,7 @@ do {\
     (x)->hour = _hour;\
     (x)->min = _min;\
     (x)->sec = _sec;\
-    (x)->flags = (_flags) | COMPLEX_DAT;\
+    (x)->flags = (_flags);\
 } while (0)
 #else
 #define set_to_complex(obj, x, _nth, _jd ,_df, _sf, _of, _sg,\
@@ -376,7 +352,7 @@ do {\
     (x)->sg = (date_sg_t)(_sg);\
     (x)->year = _year;\
     (x)->pc = PACK5(_mon, _mday, _hour, _min, _sec);\
-    (x)->flags = (_flags) | COMPLEX_DAT;\
+    (x)->flags = (_flags);\
 } while (0)
 #endif
 
@@ -1086,18 +1062,6 @@ decode_day(VALUE d, VALUE *jd, VALUE *df, VALUE *sf)
 }
 
 inline static double
-s_virtual_sg(union DateData *x)
-{
-    if (isinf(x->s.sg))
-	return x->s.sg;
-    if (f_zero_p(x->s.nth))
-	return x->s.sg;
-    else if (f_negative_p(x->s.nth))
-	return positive_inf;
-    return negative_inf;
-}
-
-inline static double
 c_virtual_sg(union DateData *x)
 {
     if (isinf(x->c.sg))
@@ -1112,10 +1076,7 @@ c_virtual_sg(union DateData *x)
 inline static double
 m_virtual_sg(union DateData *x)
 {
-    if (simple_dat_p(x))
-	return s_virtual_sg(x);
-    else
-	return c_virtual_sg(x);
+    return c_virtual_sg(x);
 }
 
 #define canonicalize_jd(_nth, _jd) \
@@ -1131,61 +1092,8 @@ do {\
 } while (0)
 
 inline static void
-canonicalize_s_jd(VALUE obj, union DateData *x)
-{
-    int j = x->s.jd;
-    VALUE nth = x->s.nth;
-    assert(have_jd_p(x));
-    canonicalize_jd(nth, x->s.jd);
-    RB_OBJ_WRITE(obj, &x->s.nth, nth);
-    if (x->s.jd != j)
-	x->flags &= ~HAVE_CIVIL;
-}
-
-inline static void
-get_s_jd(union DateData *x)
-{
-    assert(simple_dat_p(x));
-    if (!have_jd_p(x)) {
-	int jd, ns;
-
-	assert(have_civil_p(x));
-#ifndef USE_PACK
-	c_civil_to_jd(x->s.year, x->s.mon, x->s.mday,
-		      s_virtual_sg(x), &jd, &ns);
-#else
-	c_civil_to_jd(x->s.year, EX_MON(x->s.pc), EX_MDAY(x->s.pc),
-		      s_virtual_sg(x), &jd, &ns);
-#endif
-	x->s.jd = jd;
-	x->s.flags |= HAVE_JD;
-    }
-}
-
-inline static void
-get_s_civil(union DateData *x)
-{
-    assert(simple_dat_p(x));
-    if (!have_civil_p(x)) {
-	int y, m, d;
-
-	assert(have_jd_p(x));
-	c_jd_to_civil(x->s.jd, s_virtual_sg(x), &y, &m, &d);
-	x->s.year = y;
-#ifndef USE_PACK
-	x->s.mon = m;
-	x->s.mday = d;
-#else
-	x->s.pc = PACK2(m, d);
-#endif
-	x->s.flags |= HAVE_CIVIL;
-    }
-}
-
-inline static void
 get_c_df(union DateData *x)
 {
-    assert(complex_dat_p(x));
     if (!have_df_p(x)) {
 	assert(have_time_p(x));
 #ifndef USE_PACK
@@ -1204,7 +1112,6 @@ get_c_df(union DateData *x)
 inline static void
 get_c_time(union DateData *x)
 {
-    assert(complex_dat_p(x));
     if (!have_time_p(x)) {
 #ifndef USE_PACK
 	int r;
@@ -1241,7 +1148,6 @@ canonicalize_c_jd(VALUE obj, union DateData *x)
 inline static void
 get_c_jd(union DateData *x)
 {
-    assert(complex_dat_p(x));
     if (!have_jd_p(x)) {
 	int jd, ns;
 
@@ -1273,7 +1179,6 @@ get_c_jd(union DateData *x)
 inline static void
 get_c_civil(union DateData *x)
 {
-    assert(complex_dat_p(x));
     if (!have_civil_p(x)) {
 #ifndef USE_PACK
 	int jd, y, m, d;
@@ -1302,7 +1207,6 @@ get_c_civil(union DateData *x)
 inline static int
 local_jd(union DateData *x)
 {
-    assert(complex_dat_p(x));
     assert(have_jd_p(x));
     assert(have_df_p(x));
     return jd_utc_to_local(x->c.jd, x->c.df, x->c.of);
@@ -1311,7 +1215,6 @@ local_jd(union DateData *x)
 inline static int
 local_df(union DateData *x)
 {
-    assert(complex_dat_p(x));
     assert(have_df_p(x));
     return df_utc_to_local(x->c.df, x->c.of);
 }
@@ -1412,11 +1315,7 @@ guess_style(VALUE y, double sg) /* -/+oo or zero */
 inline static void
 m_canonicalize_jd(VALUE obj, union DateData *x)
 {
-    if (simple_dat_p(x)) {
-	get_s_jd(x);
-	canonicalize_s_jd(obj, x);
-    }
-    else {
+    {
 	get_c_jd(x);
 	canonicalize_c_jd(obj, x);
     }
@@ -1425,9 +1324,7 @@ m_canonicalize_jd(VALUE obj, union DateData *x)
 inline static VALUE
 m_nth(union DateData *x)
 {
-    if (simple_dat_p(x))
-	return x->s.nth;
-    else {
+    {
 	get_c_civil(x);
 	return x->c.nth;
     }
@@ -1436,11 +1333,7 @@ m_nth(union DateData *x)
 inline static int
 m_jd(union DateData *x)
 {
-    if (simple_dat_p(x)) {
-	get_s_jd(x);
-	return x->s.jd;
-    }
-    else {
+    {
 	get_c_jd(x);
 	return x->c.jd;
     }
@@ -1462,11 +1355,7 @@ m_real_jd(union DateData *x)
 static int
 m_local_jd(union DateData *x)
 {
-    if (simple_dat_p(x)) {
-	get_s_jd(x);
-	return x->s.jd;
-    }
-    else {
+    {
 	get_c_jd(x);
 	get_c_df(x);
 	return local_jd(x);
@@ -1489,9 +1378,7 @@ m_real_local_jd(union DateData *x)
 inline static int
 m_df(union DateData *x)
 {
-    if (simple_dat_p(x))
-	return 0;
-    else {
+    {
 	get_c_df(x);
 	return x->c.df;
     }
@@ -1508,9 +1395,7 @@ m_df_in_day(union DateData *x)
 static int
 m_local_df(union DateData *x)
 {
-    if (simple_dat_p(x))
-	return 0;
-    else {
+    {
 	get_c_df(x);
 	return local_df(x);
     }
@@ -1527,10 +1412,7 @@ m_local_df_in_day(union DateData *x)
 inline static VALUE
 m_sf(union DateData *x)
 {
-    if (simple_dat_p(x))
-	return INT2FIX(0);
-    else
-	return x->c.sf;
+    return x->c.sf;
 }
 
 #ifndef NDEBUG
@@ -1550,9 +1432,7 @@ m_sf_in_sec(union DateData *x)
 static VALUE
 m_fr(union DateData *x)
 {
-    if (simple_dat_p(x))
-	return INT2FIX(0);
-    else {
+    {
 	int df;
 	VALUE sf, fr;
 
@@ -1572,20 +1452,6 @@ m_ajd(union DateData *x)
 {
     VALUE r, sf;
     int df;
-
-    if (simple_dat_p(x)) {
-	r = m_real_jd(x);
-	if (FIXNUM_P(r) && FIX2LONG(r) <= (FIXNUM_MAX / 2)) {
-	    long ir = FIX2LONG(r);
-	    ir = ir * 2 - 1;
-	    return rb_rational_new2(LONG2FIX(ir), INT2FIX(2));
-	}
-	else
-	    return rb_rational_new2(f_sub(f_mul(r,
-						INT2FIX(2)),
-					  INT2FIX(1)),
-				    INT2FIX(2));
-    }
 
     r = m_real_jd(x);
     df = m_df(x);
@@ -1615,9 +1481,6 @@ m_amjd(union DateData *x)
 	r = rb_rational_new1(f_sub(m_real_jd(x),
 				   INT2FIX(2400001)));
 
-    if (simple_dat_p(x))
-	return r;
-
     df = m_df(x);
     if (df)
 	r = f_add(r, isec_to_day(df));
@@ -1631,9 +1494,7 @@ m_amjd(union DateData *x)
 inline static int
 m_of(union DateData *x)
 {
-    if (simple_dat_p(x))
-	return 0;
-    else {
+    {
 	get_c_jd(x);
 	return x->c.of;
     }
@@ -1648,9 +1509,7 @@ m_of_in_day(union DateData *x)
 inline static double
 m_sg(union DateData *x)
 {
-    if (simple_dat_p(x))
-	return x->s.sg;
-    else {
+    {
 	get_c_jd(x);
 	return x->c.sg;
     }
@@ -1662,12 +1521,7 @@ m_julian_p(union DateData *x)
     int jd;
     double sg;
 
-    if (simple_dat_p(x)) {
-	get_s_jd(x);
-	jd = x->s.jd;
-	sg = s_virtual_sg(x);
-    }
-    else {
+    {
 	get_c_jd(x);
 	jd = x->c.jd;
 	sg = c_virtual_sg(x);
@@ -1708,11 +1562,7 @@ m_proleptic_gregorian_p(union DateData *x)
 inline static int
 m_year(union DateData *x)
 {
-    if (simple_dat_p(x)) {
-	get_s_civil(x);
-	return x->s.year;
-    }
-    else {
+    {
 	get_c_civil(x);
 	return x->c.year;
     }
@@ -1739,15 +1589,7 @@ m_real_year(union DateData *x)
 inline static int
 m_mon(union DateData *x)
 {
-    if (simple_dat_p(x)) {
-	get_s_civil(x);
-#ifndef USE_PACK
-	return x->s.mon;
-#else
-	return EX_MON(x->s.pc);
-#endif
-    }
-    else {
+    {
 	get_c_civil(x);
 #ifndef USE_PACK
 	return x->c.mon;
@@ -1760,15 +1602,7 @@ m_mon(union DateData *x)
 inline static int
 m_mday(union DateData *x)
 {
-    if (simple_dat_p(x)) {
-	get_s_civil(x);
-#ifndef USE_PACK
-	return x->s.mday;
-#else
-	return EX_MDAY(x->s.pc);
-#endif
-    }
-    else {
+    {
 	get_c_civil(x);
 #ifndef USE_PACK
 	return x->c.mday;
@@ -1895,9 +1729,7 @@ m_wnum1(union DateData *x)
 inline static int
 m_hour(union DateData *x)
 {
-    if (simple_dat_p(x))
-	return 0;
-    else {
+    {
 	get_c_time(x);
 #ifndef USE_PACK
 	return x->c.hour;
@@ -1910,9 +1742,7 @@ m_hour(union DateData *x)
 inline static int
 m_min(union DateData *x)
 {
-    if (simple_dat_p(x))
-	return 0;
-    else {
+    {
 	get_c_time(x);
 #ifndef USE_PACK
 	return x->c.min;
@@ -1925,9 +1755,7 @@ m_min(union DateData *x)
 inline static int
 m_sec(union DateData *x)
 {
-    if (simple_dat_p(x))
-	return 0;
-    else {
+    {
 	get_c_time(x);
 #ifndef USE_PACK
 	return x->c.sec;
@@ -1958,8 +1786,6 @@ of2str(int of)
 static VALUE
 m_zone(union DateData *x)
 {
-    if (simple_dat_p(x))
-	return rb_usascii_str_new2("+00:00");
     return of2str(m_of(x));
 }
 
@@ -2956,9 +2782,7 @@ static void
 d_lite_gc_mark(void *ptr)
 {
     union DateData *dat = ptr;
-    if (simple_dat_p(dat))
-	rb_gc_mark(dat->s.nth);
-    else {
+    {
 	rb_gc_mark(dat->c.nth);
 	rb_gc_mark(dat->c.sf);
     }
@@ -4653,16 +4477,7 @@ dup_obj(VALUE self)
 {
     get_d1a(self);
 
-    if (simple_dat_p(adat)) {
-	VALUE new = d_lite_s_alloc_simple(rb_obj_class(self));
-	{
-	    get_d1b(new);
-	    bdat->s = adat->s;
-	    RB_OBJ_WRITTEN(new, Qundef, bdat->s.nth);
-	    return new;
-	}
-    }
-    else {
+    {
 	VALUE new = d_lite_s_alloc_complex(rb_obj_class(self));
 	{
 	    get_d1b(new);
@@ -4679,16 +4494,7 @@ dup_obj_as_complex(VALUE self)
 {
     get_d1a(self);
 
-    if (simple_dat_p(adat)) {
-	VALUE new = d_lite_s_alloc_complex(rb_obj_class(self));
-	{
-	    get_d1b(new);
-	    copy_simple_to_complex(new, &bdat->c, &adat->s);
-	    bdat->c.flags |= HAVE_DF | COMPLEX_DAT;
-	    return new;
-	}
-    }
-    else {
+    {
 	VALUE new = d_lite_s_alloc_complex(rb_obj_class(self));
 	{
 	    get_d1b(new);
@@ -4751,14 +4557,7 @@ d_lite_initialize(int argc, VALUE *argv, VALUE self)
 	get_d1(self);
 
 	decode_jd(jd, &nth, &rjd);
-	if (!df && f_zero_p(sf) && !of) {
-	    set_to_simple(self, &dat->s, nth, rjd, sg, 0, 0, 0, HAVE_JD);
-	}
-	else {
-	    if (!complex_dat_p(dat))
-		rb_raise(rb_eArgError,
-			 "cannot load complex into simple");
-
+	{
 	    set_to_complex(self, &dat->c, nth, rjd, df, sf, of, sg,
 			   0, 0, 0, 0, 0, 0, HAVE_JD | HAVE_DF);
 	}
@@ -4777,35 +4576,7 @@ d_lite_initialize_copy(VALUE copy, VALUE date)
 	return copy;
     {
 	get_d2(copy, date);
-	if (simple_dat_p(bdat)) {
-	    if (simple_dat_p(adat)) {
-		adat->s = bdat->s;
-	    }
-	    else {
-		adat->c.flags = bdat->s.flags | COMPLEX_DAT;
-		adat->c.nth = bdat->s.nth;
-		adat->c.jd = bdat->s.jd;
-		adat->c.df = 0;
-		adat->c.sf = INT2FIX(0);
-		adat->c.of = 0;
-		adat->c.sg = bdat->s.sg;
-		adat->c.year = bdat->s.year;
-#ifndef USE_PACK
-		adat->c.mon = bdat->s.mon;
-		adat->c.mday = bdat->s.mday;
-		adat->c.hour = bdat->s.hour;
-		adat->c.min = bdat->s.min;
-		adat->c.sec = bdat->s.sec;
-#else
-		adat->c.pc = bdat->s.pc;
-#endif
-	    }
-	}
-	else {
-	    if (!complex_dat_p(adat))
-		rb_raise(rb_eArgError,
-			 "cannot load complex into simple");
-
+	{
 	    adat->c = bdat->c;
 	}
     }
@@ -4818,11 +4589,7 @@ d_lite_fill(VALUE self)
 {
     get_d1(self);
 
-    if (simple_dat_p(dat)) {
-	get_s_jd(dat);
-	get_s_civil(dat);
-    }
-    else {
+    {
 	get_c_jd(dat);
 	get_c_civil(dat);
 	get_c_df(dat);
@@ -4991,8 +4758,6 @@ static VALUE
 d_lite_day_fraction(VALUE self)
 {
     get_d1(self);
-    if (simple_dat_p(dat))
-	return INT2FIX(0);
     return m_fr(dat);
 }
 
@@ -5352,17 +5117,7 @@ d_lite_start(VALUE self)
 static void
 clear_civil(union DateData *x)
 {
-    if (simple_dat_p(x)) {
-	x->s.year = 0;
-#ifndef USE_PACK
-	x->s.mon = 0;
-	x->s.mday = 0;
-#else
-	x->s.pc = 0;
-#endif
-	x->s.flags &= ~HAVE_CIVIL;
-    }
-    else {
+    {
 	x->c.year = 0;
 #ifndef USE_PACK
 	x->c.mon = 0;
@@ -5380,11 +5135,7 @@ clear_civil(union DateData *x)
 static void
 set_sg(union DateData *x, double sg)
 {
-    if (simple_dat_p(x)) {
-	get_s_jd(x);
-	clear_civil(x);
-	x->s.sg = (date_sg_t)sg;
-    } else {
+    {
 	get_c_jd(x);
 	get_c_df(x);
 	clear_civil(x);
@@ -5478,7 +5229,6 @@ d_lite_gregorian(VALUE self)
 static void
 set_of(union DateData *x, int of)
 {
-    assert(complex_dat_p(x));
     get_c_jd(x);
     get_c_df(x);
     clear_civil(x);
@@ -5565,14 +5315,7 @@ d_lite_plus(VALUE self, VALUE other)
 		canonicalize_jd(nth, jd);
 	    }
 
-	    if (simple_dat_p(dat))
-		return d_simple_new_internal(rb_obj_class(self),
-					     nth, jd,
-					     dat->s.sg,
-					     0, 0, 0,
-					     (dat->s.flags | HAVE_JD) &
-					     ~HAVE_CIVIL);
-	    else
+	    {
 		return d_complex_new_internal(rb_obj_class(self),
 					      nth, jd,
 					      dat->c.df, dat->c.sf,
@@ -5589,6 +5332,7 @@ d_lite_plus(VALUE self, VALUE other)
 #endif
 					      (dat->c.flags | HAVE_JD) &
 					      ~HAVE_CIVIL);
+	    }
 	}
 	break;
       case T_BIGNUM:
@@ -5623,14 +5367,7 @@ d_lite_plus(VALUE self, VALUE other)
 	    else
 		nth = f_add(m_nth(dat), nth);
 
-	    if (simple_dat_p(dat))
-		return d_simple_new_internal(rb_obj_class(self),
-					     nth, jd,
-					     dat->s.sg,
-					     0, 0, 0,
-					     (dat->s.flags | HAVE_JD) &
-					     ~HAVE_CIVIL);
-	    else
+	    {
 		return d_complex_new_internal(rb_obj_class(self),
 					      nth, jd,
 					      dat->c.df, dat->c.sf,
@@ -5647,6 +5384,7 @@ d_lite_plus(VALUE self, VALUE other)
 #endif
 					      (dat->c.flags | HAVE_JD) &
 					      ~HAVE_CIVIL);
+	    }
 	}
 	break;
       case T_FLOAT:
@@ -5730,15 +5468,7 @@ d_lite_plus(VALUE self, VALUE other)
 	    else
 		nth = f_add(m_nth(dat), nth);
 
-	    if (!df && f_zero_p(sf) && !m_of(dat))
-		return d_simple_new_internal(rb_obj_class(self),
-					     nth, (int)jd,
-					     m_sg(dat),
-					     0, 0, 0,
-					     (dat->s.flags | HAVE_JD) &
-					     ~(HAVE_CIVIL | HAVE_TIME |
-					       COMPLEX_DAT));
-	    else
+	    {
 		return d_complex_new_internal(rb_obj_class(self),
 					      nth, (int)jd,
 					      df, sf,
@@ -5748,6 +5478,7 @@ d_lite_plus(VALUE self, VALUE other)
 					      (dat->c.flags |
 					       HAVE_JD | HAVE_DF) &
 					      ~(HAVE_CIVIL | HAVE_TIME));
+	    }
 	}
 	break;
       default:
@@ -5835,15 +5566,7 @@ d_lite_plus(VALUE self, VALUE other)
 	    else
 		nth = f_add(m_nth(dat), nth);
 
-	    if (!df && f_zero_p(sf) && !m_of(dat))
-		return d_simple_new_internal(rb_obj_class(self),
-					     nth, jd,
-					     m_sg(dat),
-					     0, 0, 0,
-					     (dat->s.flags | HAVE_JD) &
-					     ~(HAVE_CIVIL | HAVE_TIME |
-					       COMPLEX_DAT));
-	    else
+	    {
 		return d_complex_new_internal(rb_obj_class(self),
 					      nth, jd,
 					      df, sf,
@@ -5853,6 +5576,7 @@ d_lite_plus(VALUE self, VALUE other)
 					      (dat->c.flags |
 					       HAVE_JD | HAVE_DF) &
 					      ~(HAVE_CIVIL | HAVE_TIME));
+	    }
 	}
 	break;
     }
@@ -6359,38 +6083,8 @@ d_lite_cmp(VALUE self, VALUE other)
     {
 	get_d2(self, other);
 
-	if (!(simple_dat_p(adat) && simple_dat_p(bdat) &&
-	      m_gregorian_p(adat) == m_gregorian_p(bdat)))
+	if (1)
 	    return cmp_dd(self, other);
-
-	{
-	    VALUE a_nth, b_nth;
-	    int a_jd, b_jd;
-
-	    m_canonicalize_jd(self, adat);
-	    m_canonicalize_jd(other, bdat);
-	    a_nth = m_nth(adat);
-	    b_nth = m_nth(bdat);
-	    if (f_eqeq_p(a_nth, b_nth)) {
-		a_jd = m_jd(adat);
-		b_jd = m_jd(bdat);
-		if (a_jd == b_jd) {
-		    return INT2FIX(0);
-		}
-		else if (a_jd < b_jd) {
-		    return INT2FIX(-1);
-		}
-		else {
-		    return INT2FIX(1);
-		}
-	    }
-	    else if (f_lt_p(a_nth, b_nth)) {
-		return INT2FIX(-1);
-	    }
-	    else {
-		return INT2FIX(1);
-	    }
-	}
     }
 }
 
@@ -6503,29 +6197,14 @@ mk_inspect_raw(union DateData *x, VALUE klass)
 {
     char flags[6];
 
-    flags[0] = (x->flags & COMPLEX_DAT) ? 'C' : 'S';
+    flags[0] = 'C';
     flags[1] = (x->flags & HAVE_JD)     ? 'j' : '-';
     flags[2] = (x->flags & HAVE_DF)     ? 'd' : '-';
     flags[3] = (x->flags & HAVE_CIVIL)  ? 'c' : '-';
     flags[4] = (x->flags & HAVE_TIME)   ? 't' : '-';
     flags[5] = '\0';
 
-    if (simple_dat_p(x)) {
-	return rb_enc_sprintf(rb_usascii_encoding(),
-			      "#<%"PRIsVALUE": "
-			      "(%+"PRIsVALUE"th,%dj),+0s,%.0fj; "
-			      "%dy%dm%dd; %s>",
-			      klass,
-			      x->s.nth, x->s.jd, x->s.sg,
-#ifndef USE_PACK
-			      x->s.year, x->s.mon, x->s.mday,
-#else
-			      x->s.year,
-			      EX_MON(x->s.pc), EX_MDAY(x->s.pc),
-#endif
-			      flags);
-    }
-    else {
+    {
 	return rb_enc_sprintf(rb_usascii_encoding(),
 			      "#<%"PRIsVALUE": "
 			      "(%+"PRIsVALUE"th,%dj,%ds,%+"PRIsVALUE"n),"
@@ -6634,8 +6313,6 @@ tmx_m_secs(union DateData *x)
 
     s = day_to_sec(f_sub(m_real_jd(x),
 			 UNIX_EPOCH_IN_CJD));
-    if (simple_dat_p(x))
-	return s;
     df = m_df(x);
     if (df)
 	s = f_add(s, INT2FIX(df));
@@ -6650,8 +6327,6 @@ tmx_m_msecs(union DateData *x)
     VALUE s, sf;
 
     s = sec_to_ms(tmx_m_secs(x));
-    if (simple_dat_p(x))
-	return s;
     sf = m_sf(x);
     if (f_nonzero_p(sf))
 	s = f_add(s, f_div(sf, INT2FIX(MILLISECOND_IN_NANOSECONDS)));
@@ -7184,16 +6859,7 @@ d_lite_marshal_load(VALUE self, VALUE a)
 	break;
     }
 
-    if (simple_dat_p(dat)) {
-	if (df || !f_zero_p(sf) || of) {
-	    /* loading a fractional date; promote to complex */
-	    dat = ruby_xrealloc(dat, sizeof(struct ComplexDateData));
-	    RTYPEDDATA(self)->data = dat;
-	    goto complex_data;
-	}
-	set_to_simple(self, &dat->s, nth, jd, sg, 0, 0, 0, HAVE_JD);
-    } else {
-      complex_data:
+    {
 	set_to_complex(self, &dat->c, nth, jd, df, sf, of, sg,
 		       0, 0, 0, 0, 0, 0,
 		       HAVE_JD | HAVE_DF);
@@ -8625,15 +8291,7 @@ date_to_datetime(VALUE self)
 {
     get_d1a(self);
 
-    if (simple_dat_p(adat)) {
-	VALUE new = d_lite_s_alloc_simple(cDateTime);
-	{
-	    get_d1b(new);
-	    bdat->s = adat->s;
-	    return new;
-	}
-    }
-    else {
+    {
 	VALUE new = d_lite_s_alloc_complex(cDateTime);
 	{
 	    get_d1b(new);
@@ -8695,22 +8353,13 @@ datetime_to_date(VALUE self)
 {
     get_d1a(self);
 
-    if (simple_dat_p(adat)) {
+    {
 	VALUE new = d_lite_s_alloc_simple(cDate);
 	{
 	    get_d1b(new);
-	    bdat->s = adat->s;
-	    bdat->s.jd = m_local_jd(adat);
-	    return new;
-	}
-    }
-    else {
-	VALUE new = d_lite_s_alloc_simple(cDate);
-	{
-	    get_d1b(new);
-	    copy_complex_to_simple(new, &bdat->s, &adat->c);
-	    bdat->s.jd = m_local_jd(adat);
-	    bdat->s.flags &= ~(HAVE_DF | HAVE_TIME | COMPLEX_DAT);
+	    copy_complex_to_simple(new, &bdat->c, &adat->c);
+	    bdat->c.jd = m_local_jd(adat);
+	    bdat->c.flags &= ~(HAVE_DF | HAVE_TIME);
 	    return new;
 	}
     }
