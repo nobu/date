@@ -812,709 +812,1020 @@ zonetab (register const char *str, register size_t len)
       {-1}, {-1},
 #line 37 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str2,   -2*3600},
+#line 816 "zonetab.h"
 #line 46 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str3,  -11*3600},
+#line 819 "zonetab.h"
 #line 48 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str4,    0*3600},
+#line 822 "zonetab.h"
 #line 39 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str5,   -4*3600},
+#line 825 "zonetab.h"
       {-1}, {-1},
 #line 272 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str8,21600},
+#line 829 "zonetab.h"
 #line 271 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str9,25200},
+#line 832 "zonetab.h"
 #line 38 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str10,   -3*3600},
+#line 835 "zonetab.h"
       {-1}, {-1},
 #line 24 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str13,    1*3600},
+#line 839 "zonetab.h"
 #line 28 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str14,    5*3600},
+#line 842 "zonetab.h"
 #line 274 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str15,-18000},
+#line 845 "zonetab.h"
 #line 282 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str16,-10800},
+#line 848 "zonetab.h"
 #line 276 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str17,43200},
+#line 851 "zonetab.h"
 #line 275 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str18,43200},
+#line 854 "zonetab.h"
 #line 83 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str19,  2*3600},
+#line 857 "zonetab.h"
 #line 189 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str20,36000},
+#line 860 "zonetab.h"
 #line 91 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str21, 3*3600},
+#line 863 "zonetab.h"
 #line 90 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str22,  3*3600},
+#line 866 "zonetab.h"
       {-1},
 #line 104 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str24,-6*3600},
+#line 870 "zonetab.h"
 #line 220 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str25,-18000},
+#line 873 "zonetab.h"
 #line 22 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str26, -8*3600},
+#line 876 "zonetab.h"
 #line 136 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str27,                -18000},
+#line 879 "zonetab.h"
 #line 35 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str28,   12*3600},
+#line 882 "zonetab.h"
 #line 59 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str29, -4*3600},
+#line 885 "zonetab.h"
 #line 16 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str30, -5*3600},
+#line 888 "zonetab.h"
 #line 26 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str31,    3*3600},
+#line 891 "zonetab.h"
 #line 259 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str32,23400},
+#line 894 "zonetab.h"
 #line 76 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str33,  1*3600},
+#line 897 "zonetab.h"
       {-1},
 #line 85 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str35, 2*3600},
+#line 901 "zonetab.h"
 #line 74 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str36,  1*3600},
+#line 904 "zonetab.h"
 #line 27 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str37,    4*3600},
+#line 907 "zonetab.h"
 #line 82 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str38, 2*3600},
+#line 910 "zonetab.h"
 #line 68 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str39,2*3600},
+#line 913 "zonetab.h"
       {-1},
 #line 205 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str41,28800},
+#line 917 "zonetab.h"
 #line 255 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str42,39600},
+#line 920 "zonetab.h"
 #line 254 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str43,43200},
+#line 923 "zonetab.h"
 #line 20 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str44, -7*3600},
+#line 926 "zonetab.h"
 #line 92 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str45,  3*3600},
+#line 929 "zonetab.h"
 #line 215 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str46,-18000},
+#line 932 "zonetab.h"
 #line 18 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str47, -6*3600},
+#line 935 "zonetab.h"
 #line 195 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str48,18000},
+#line 938 "zonetab.h"
 #line 29 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str49,    6*3600},
+#line 941 "zonetab.h"
       {-1}, {-1},
 #line 54 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str52, -3*3600},
+#line 945 "zonetab.h"
 #line 229 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str53,-7200},
+#line 948 "zonetab.h"
 #line 224 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str54,10800},
+#line 951 "zonetab.h"
 #line 25 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str55,    2*3600},
+#line 954 "zonetab.h"
       {-1},
 #line 193 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str57,43200},
+#line 958 "zonetab.h"
 #line 192 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str58,43200},
+#line 961 "zonetab.h"
 #line 202 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str59,28800},
+#line 964 "zonetab.h"
 #line 32 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str60,    9*3600},
+#line 967 "zonetab.h"
 #line 279 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str61,28800},
+#line 970 "zonetab.h"
 #line 51 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str62,  -2*3600},
+#line 973 "zonetab.h"
 #line 97 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str63,  6*3600},
+#line 976 "zonetab.h"
 #line 77 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str64, 1*3600},
+#line 979 "zonetab.h"
 #line 84 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str65,  2*3600},
+#line 982 "zonetab.h"
 #line 67 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str66,-10*3600},
+#line 985 "zonetab.h"
 #line 257 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str67,18000},
+#line 988 "zonetab.h"
 #line 95 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str68,  5*3600},
+#line 991 "zonetab.h"
       {-1},
 #line 203 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str70,-14400},
+#line 995 "zonetab.h"
 #line 73 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str71,  1*3600},
+#line 998 "zonetab.h"
 #line 284 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str72,32400},
+#line 1001 "zonetab.h"
       {-1},
 #line 283 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str74,39600},
+#line 1005 "zonetab.h"
 #line 241 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str75,21600},
+#line 1008 "zonetab.h"
 #line 96 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str76,  (5*3600+1800)},
+#line 1011 "zonetab.h"
 #line 197 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str77,28800},
+#line 1014 "zonetab.h"
       {-1},
 #line 258 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str79,43200},
+#line 1018 "zonetab.h"
 #line 78 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str80,  1*3600},
+#line 1021 "zonetab.h"
 #line 273 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str81,18000},
+#line 1024 "zonetab.h"
 #line 86 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str82, 2*3600},
+#line 1027 "zonetab.h"
       {-1},
 #line 210 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str84,36000},
+#line 1031 "zonetab.h"
 #line 281 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str85,-7200},
+#line 1034 "zonetab.h"
       {-1}, {-1},
 #line 129 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str88,                -21600},
+#line 1038 "zonetab.h"
 #line 188 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str89,39600},
+#line 1041 "zonetab.h"
 #line 186 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str90,-18000},
+#line 1044 "zonetab.h"
 #line 221 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str91,-18000},
+#line 1047 "zonetab.h"
 #line 185 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str92,34200},
+#line 1050 "zonetab.h"
 #line 106 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str93,11*3600},
+#line 1053 "zonetab.h"
 #line 56 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str94, -3*3600},
+#line 1056 "zonetab.h"
 #line 211 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str95,36000},
+#line 1059 "zonetab.h"
 #line 52 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str96,-2*3600},
+#line 1062 "zonetab.h"
 #line 123 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str97,          34200},
+#line 1065 "zonetab.h"
       {-1}, {-1},
 #line 218 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str100,25200},
+#line 1069 "zonetab.h"
 #line 245 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str101,12600},
+#line 1072 "zonetab.h"
 #line 244 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str102,28800},
+#line 1075 "zonetab.h"
 #line 243 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str103,32400},
+#line 1078 "zonetab.h"
 #line 89 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str104,   3*3600},
+#line 1081 "zonetab.h"
 #line 36 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str105,   -1*3600},
+#line 1084 "zonetab.h"
 #line 204 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str106,21600},
+#line 1087 "zonetab.h"
 #line 151 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str107,               -25200},
+#line 1090 "zonetab.h"
 #line 99 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str108,  (6*3600+1800)},
+#line 1093 "zonetab.h"
 #line 45 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str109,  -10*3600},
+#line 1096 "zonetab.h"
 #line 34 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str110,   11*3600},
+#line 1099 "zonetab.h"
 #line 75 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str111,  1*3600},
+#line 1102 "zonetab.h"
       {-1},
 #line 93 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str113,  4*3600},
+#line 1106 "zonetab.h"
 #line 50 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str114,  0*3600},
+#line 1109 "zonetab.h"
       {-1},
 #line 81 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str116, 1*3600},
+#line 1113 "zonetab.h"
 #line 80 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str117,  1*3600},
+#line 1116 "zonetab.h"
       {-1},
 #line 98 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str119, 2*3600},
+#line 1120 "zonetab.h"
 #line 316 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str120,43200},
+#line 1123 "zonetab.h"
 #line 58 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str121, -(2*3600+1800)},
+#line 1126 "zonetab.h"
 #line 187 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str122,31500},
+#line 1129 "zonetab.h"
 #line 207 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str123,45900},
+#line 1132 "zonetab.h"
 #line 213 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str124,-18000},
+#line 1135 "zonetab.h"
 #line 201 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str125,14400},
+#line 1138 "zonetab.h"
 #line 60 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str126, -4*3600},
+#line 1141 "zonetab.h"
 #line 200 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str127,18000},
+#line 1144 "zonetab.h"
 #line 57 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str128,-3*3600},
+#line 1147 "zonetab.h"
 #line 256 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str129,-30600},
+#line 1150 "zonetab.h"
 #line 94 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str130,  4*3600},
+#line 1153 "zonetab.h"
 #line 102 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str131,  9*3600},
+#line 1156 "zonetab.h"
 #line 125 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str132,            21600},
+#line 1159 "zonetab.h"
 #line 190 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str133,16200},
+#line 1162 "zonetab.h"
 #line 135 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str134,       -10800},
+#line 1165 "zonetab.h"
 #line 124 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str135,        -21600},
+#line 1168 "zonetab.h"
       {-1},
 #line 239 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str137,25200},
+#line 1172 "zonetab.h"
       {-1}, {-1}, {-1}, {-1}, {-1},
 #line 277 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str143,36000},
+#line 1176 "zonetab.h"
 #line 269 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str144,43200},
+#line 1179 "zonetab.h"
 #line 149 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str145,                 -21600},
+#line 1182 "zonetab.h"
 #line 196 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str146,32400},
+#line 1185 "zonetab.h"
 #line 223 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str147,-3600},
+#line 1188 "zonetab.h"
 #line 217 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str148,25200},
+#line 1191 "zonetab.h"
 #line 222 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str149,0},
+#line 1194 "zonetab.h"
 #line 278 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str150,46800},
+#line 1197 "zonetab.h"
 #line 112 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str151,                -32400},
+#line 1200 "zonetab.h"
       {-1}, {-1},
 #line 71 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str154,  -11*3600},
+#line 1204 "zonetab.h"
       {-1}, {-1}, {-1},
 #line 324 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str158,0},
+#line 1208 "zonetab.h"
       {-1},
 #line 181 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str160,               18000},
+#line 1212 "zonetab.h"
 #line 184 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str161,37800},
+#line 1215 "zonetab.h"
 #line 268 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str162,20700},
+#line 1218 "zonetab.h"
 #line 252 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str163,37800},
+#line 1221 "zonetab.h"
 #line 111 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str164,             16200},
+#line 1224 "zonetab.h"
       {-1}, {-1},
 #line 33 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str167,   10*3600},
+#line 1228 "zonetab.h"
       {-1},
 #line 30 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str169,    7*3600},
+#line 1232 "zonetab.h"
 #line 242 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str170,16200},
+#line 1235 "zonetab.h"
 #line 209 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str171,28800},
+#line 1238 "zonetab.h"
 #line 208 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str172,32400},
+#line 1241 "zonetab.h"
 #line 15 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str173,  0*3600},
+#line 1244 "zonetab.h"
 #line 232 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str174,14400},
+#line 1247 "zonetab.h"
 #line 267 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str175,25200},
+#line 1250 "zonetab.h"
 #line 266 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str176,25200},
+#line 1253 "zonetab.h"
 #line 226 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str177,43200},
+#line 1256 "zonetab.h"
 #line 43 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str178,   -8*3600},
+#line 1259 "zonetab.h"
 #line 225 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str179,46800},
+#line 1262 "zonetab.h"
       {-1},
 #line 285 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str181,-10800},
+#line 1266 "zonetab.h"
 #line 263 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str182,39600},
+#line 1269 "zonetab.h"
 #line 103 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str183,  9*3600},
+#line 1272 "zonetab.h"
 #line 247 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str184,39600},
+#line 1275 "zonetab.h"
 #line 105 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str185, 10*3600},
+#line 1278 "zonetab.h"
 #line 146 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str186,                    12600},
+#line 1281 "zonetab.h"
 #line 132 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str187,               10800},
+#line 1284 "zonetab.h"
 #line 101 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str188, 8*3600},
+#line 1287 "zonetab.h"
 #line 42 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str189,   -7*3600},
+#line 1290 "zonetab.h"
 #line 133 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str190,            36000},
+#line 1293 "zonetab.h"
 #line 41 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str191,   -6*3600},
+#line 1296 "zonetab.h"
 #line 206 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str192,49500},
+#line 1299 "zonetab.h"
 #line 301 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str193,18000},
+#line 1302 "zonetab.h"
 #line 212 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str194,-14400},
+#line 1305 "zonetab.h"
 #line 194 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str195,-43200},
+#line 1308 "zonetab.h"
       {-1},
 #line 262 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str197,28800},
+#line 1312 "zonetab.h"
 #line 182 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str198,            36000},
+#line 1315 "zonetab.h"
 #line 260 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str199,14400},
+#line 1318 "zonetab.h"
 #line 322 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str200,32400},
+#line 1321 "zonetab.h"
 #line 87 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str201, 2*3600},
+#line 1324 "zonetab.h"
 #line 289 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str202,39600},
+#line 1327 "zonetab.h"
 #line 155 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str203,             43200},
+#line 1330 "zonetab.h"
 #line 303 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str204,46800},
+#line 1333 "zonetab.h"
 #line 130 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str205,                   28800},
+#line 1336 "zonetab.h"
 #line 302 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str206,50400},
+#line 1339 "zonetab.h"
 #line 88 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str207,  -11*3600},
+#line 1342 "zonetab.h"
       {-1},
 #line 145 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str209,                   19800},
+#line 1346 "zonetab.h"
       {-1},
 #line 317 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str211,-10800},
+#line 1350 "zonetab.h"
 #line 291 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str212,39600},
+#line 1353 "zonetab.h"
       {-1},
 #line 199 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str214,-3600},
+#line 1357 "zonetab.h"
 #line 198 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str215,0},
+#line 1360 "zonetab.h"
 #line 296 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str216,-36000},
+#line 1363 "zonetab.h"
 #line 109 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str217, 12*3600},
+#line 1366 "zonetab.h"
 #line 131 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str218,               -43200},
+#line 1369 "zonetab.h"
 #line 108 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str219,12*3600},
+#line 1372 "zonetab.h"
 #line 173 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str220,                   32400},
+#line 1375 "zonetab.h"
 #line 128 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str221,         39600},
+#line 1378 "zonetab.h"
       {-1},
 #line 286 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str223,21600},
+#line 1382 "zonetab.h"
 #line 116 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str224,               -14400},
+#line 1385 "zonetab.h"
 #line 265 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str225,39600},
+#line 1388 "zonetab.h"
       {-1},
 #line 14 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str227,   0*3600},
+#line 1392 "zonetab.h"
 #line 304 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str228,10800},
+#line 1395 "zonetab.h"
 #line 318 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str229,43200},
+#line 1398 "zonetab.h"
 #line 294 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str230,-10800},
+#line 1401 "zonetab.h"
 #line 23 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str231, -7*3600},
+#line 1404 "zonetab.h"
 #line 251 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str232,39600},
+#line 1407 "zonetab.h"
       {-1},
 #line 55 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str234, -3*3600},
+#line 1411 "zonetab.h"
 #line 17 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str235, -4*3600},
+#line 1414 "zonetab.h"
       {-1}, {-1},
 #line 280 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str238,18000},
+#line 1418 "zonetab.h"
 #line 191 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str239,21600},
+#line 1421 "zonetab.h"
 #line 323 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str240,28800},
+#line 1424 "zonetab.h"
       {-1},
 #line 320 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str242,-7200},
+#line 1428 "zonetab.h"
 #line 63 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str243,-9*3600},
+#line 1431 "zonetab.h"
 #line 319 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str244,-3600},
+#line 1434 "zonetab.h"
       {-1},
 #line 249 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str246,25200},
+#line 1438 "zonetab.h"
 #line 248 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str247,28800},
+#line 1441 "zonetab.h"
 #line 150 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str248,            -7200},
+#line 1444 "zonetab.h"
 #line 21 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str249, -6*3600},
+#line 1447 "zonetab.h"
 #line 253 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str250,50400},
+#line 1450 "zonetab.h"
 #line 168 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str251,         28800},
+#line 1453 "zonetab.h"
 #line 19 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str252, -5*3600},
+#line 1456 "zonetab.h"
 #line 79 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str253,  1*3600},
+#line 1459 "zonetab.h"
       {-1},
 #line 167 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str255,                 25200},
+#line 1463 "zonetab.h"
 #line 44 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str256,   -9*3600},
+#line 1466 "zonetab.h"
       {-1},
 #line 174 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str258,                   46800},
+#line 1470 "zonetab.h"
 #line 214 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str259,-36000},
+#line 1473 "zonetab.h"
       {-1},
 #line 311 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str261,-14400},
+#line 1477 "zonetab.h"
 #line 122 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str262,                14400},
+#line 1480 "zonetab.h"
 #line 126 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str263,           3600},
+#line 1483 "zonetab.h"
 #line 31 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str264,    8*3600},
+#line 1486 "zonetab.h"
 #line 127 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str265,         3600},
+#line 1489 "zonetab.h"
 #line 156 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str266,           -12600},
+#line 1492 "zonetab.h"
 #line 113 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str267,                    10800},
+#line 1495 "zonetab.h"
 #line 292 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str268,14400},
+#line 1498 "zonetab.h"
 #line 115 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str269,                  10800},
+#line 1501 "zonetab.h"
 #line 114 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str270,                 14400},
+#line 1504 "zonetab.h"
 #line 219 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str271,36000},
+#line 1507 "zonetab.h"
       {-1},
 #line 314 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str273,21600},
+#line 1511 "zonetab.h"
 #line 69 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str274,-10*3600},
+#line 1514 "zonetab.h"
 #line 154 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str275,                   20700},
+#line 1517 "zonetab.h"
 #line 270 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str276,-39600},
+#line 1520 "zonetab.h"
 #line 228 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str277,-14400},
+#line 1523 "zonetab.h"
       {-1},
 #line 227 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str279,-10800},
+#line 1527 "zonetab.h"
 #line 70 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str280,-10*3600},
+#line 1530 "zonetab.h"
 #line 240 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str281,10800},
+#line 1533 "zonetab.h"
       {-1}, {-1},
 #line 300 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str284,32400},
+#line 1537 "zonetab.h"
 #line 178 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str285,            28800},
+#line 1540 "zonetab.h"
 #line 137 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str286,                    7200},
+#line 1543 "zonetab.h"
 #line 152 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str287,                 23400},
+#line 1546 "zonetab.h"
 #line 110 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str288,13*3600},
+#line 1549 "zonetab.h"
 #line 233 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str289,-10800},
+#line 1552 "zonetab.h"
 #line 310 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str290,18000},
+#line 1555 "zonetab.h"
       {-1}, {-1},
 #line 158 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str293,              25200},
+#line 1559 "zonetab.h"
 #line 261 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str294,18000},
+#line 1562 "zonetab.h"
 #line 230 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str295,-21600},
+#line 1565 "zonetab.h"
 #line 264 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str296,43200},
+#line 1568 "zonetab.h"
 #line 216 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str297,-3600},
+#line 1571 "zonetab.h"
 #line 157 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str298,         28800},
+#line 1574 "zonetab.h"
       {-1},
 #line 246 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str300,21600},
+#line 1578 "zonetab.h"
 #line 117 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str301,             34200},
+#line 1581 "zonetab.h"
 #line 160 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str302,                -28800},
+#line 1584 "zonetab.h"
       {-1},
 #line 120 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str304,         -21600},
+#line 1588 "zonetab.h"
       {-1},
 #line 159 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str306,             -14400},
+#line 1592 "zonetab.h"
 #line 119 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str307,                  -3600},
+#line 1595 "zonetab.h"
 #line 231 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str308,-32400},
+#line 1598 "zonetab.h"
 #line 297 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str309,18000},
+#line 1601 "zonetab.h"
 #line 40 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str310,   -5*3600},
+#line 1604 "zonetab.h"
 #line 140 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str311,                      7200},
+#line 1607 "zonetab.h"
 #line 61 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str312,-8*3600},
+#line 1610 "zonetab.h"
 #line 307 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str313,28800},
+#line 1613 "zonetab.h"
 #line 306 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str314,32400},
+#line 1616 "zonetab.h"
 #line 287 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str315,14400},
+#line 1619 "zonetab.h"
       {-1},
 #line 298 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str317,18000},
+#line 1623 "zonetab.h"
       {-1},
 #line 169 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str319,             7200},
+#line 1627 "zonetab.h"
       {-1}, {-1}, {-1}, {-1},
 #line 100 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str324,  8*3600},
+#line 1631 "zonetab.h"
       {-1},
 #line 53 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str326, -(1*3600+1800)},
+#line 1635 "zonetab.h"
 #line 288 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str327,-10800},
+#line 1638 "zonetab.h"
       {-1}, {-1},
 #line 290 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str330,14400},
+#line 1642 "zonetab.h"
       {-1},
 #line 172 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str332,                36000},
+#line 1646 "zonetab.h"
       {-1},
 #line 238 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str334,25200},
+#line 1650 "zonetab.h"
 #line 237 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str335,28800},
+#line 1653 "zonetab.h"
       {-1}, {-1},
 #line 235 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str338,-14400},
+#line 1657 "zonetab.h"
       {-1}, {-1}, {-1},
 #line 47 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str342,  -12*3600},
+#line 1661 "zonetab.h"
 #line 64 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str343,-9*3600},
+#line 1664 "zonetab.h"
 #line 165 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str344,             -14400},
+#line 1667 "zonetab.h"
 #line 144 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str345,               -36000},
+#line 1670 "zonetab.h"
       {-1},
 #line 309 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str347,-10800},
+#line 1674 "zonetab.h"
       {-1},
 #line 308 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str349,-7200},
+#line 1678 "zonetab.h"
 #line 329 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str350,18000},
+#line 1681 "zonetab.h"
 #line 328 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str351,21600},
+#line 1684 "zonetab.h"
 #line 250 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str352,14400},
+#line 1687 "zonetab.h"
 #line 326 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str353,32400},
+#line 1690 "zonetab.h"
 #line 325 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str354,36000},
+#line 1693 "zonetab.h"
       {-1}, {-1}, {-1},
 #line 66 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str358, -9*3600},
+#line 1697 "zonetab.h"
 #line 147 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str359,                7200},
+#line 1700 "zonetab.h"
       {-1}, {-1}, {-1}, {-1}, {-1},
 #line 170 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str365,               21600},
+#line 1704 "zonetab.h"
       {-1},
 #line 183 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str367,                 32400},
+#line 1708 "zonetab.h"
       {-1}, {-1}, {-1}, {-1}, {-1}, {-1}, {-1},
 #line 321 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str375,25200},
+#line 1712 "zonetab.h"
       {-1},
 #line 118 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str377,             36000},
+#line 1716 "zonetab.h"
 #line 234 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str378,43200},
+#line 1719 "zonetab.h"
       {-1}, {-1}, {-1}, {-1}, {-1}, {-1}, {-1}, {-1},
 #line 176 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str387,            -25200},
+#line 1723 "zonetab.h"
       {-1}, {-1}, {-1},
 #line 313 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str391,36000},
+#line 1727 "zonetab.h"
 #line 312 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str392,39600},
+#line 1730 "zonetab.h"
       {-1}, {-1},
 #line 143 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str395,                      7200},
+#line 1734 "zonetab.h"
       {-1}, {-1},
 #line 171 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str398,                  28800},
+#line 1738 "zonetab.h"
 #line 293 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str399,39600},
+#line 1741 "zonetab.h"
       {-1}, {-1}, {-1}, {-1}, {-1}, {-1}, {-1}, {-1},
 #line 121 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str408,              -3600},
+#line 1745 "zonetab.h"
       {-1}, {-1}, {-1}, {-1}, {-1}, {-1}, {-1}, {-1},
 #line 299 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str417,46800},
+#line 1749 "zonetab.h"
 #line 166 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str418,                  -39600},
+#line 1752 "zonetab.h"
       {-1}, {-1},
 #line 164 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str421,             -18000},
+#line 1756 "zonetab.h"
       {-1}, {-1}, {-1}, {-1}, {-1},
 #line 315 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str427,39600},
+#line 1760 "zonetab.h"
 #line 72 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str428,-12*3600},
+#line 1763 "zonetab.h"
       {-1}, {-1}, {-1},
 #line 139 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str432,                    43200},
+#line 1767 "zonetab.h"
       {-1}, {-1},
 #line 49 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str435,  0*3600},
+#line 1771 "zonetab.h"
       {-1}, {-1}, {-1}, {-1}, {-1}, {-1}, {-1},
 #line 148 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str443,                   32400},
+#line 1775 "zonetab.h"
       {-1},
 #line 134 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str445,                7200},
+#line 1779 "zonetab.h"
       {-1}, {-1}, {-1},
 #line 295 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str449,10800},
+#line 1783 "zonetab.h"
       {-1}, {-1},
 #line 153 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str452,         21600},
+#line 1787 "zonetab.h"
       {-1}, {-1},
 #line 305 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str455,43200},
+#line 1791 "zonetab.h"
       {-1}, {-1},
 #line 179 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str458,        3600},
+#line 1795 "zonetab.h"
       {-1}, {-1}, {-1}, {-1}, {-1}, {-1}, {-1},
 #line 138 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str466,            18000},
+#line 1799 "zonetab.h"
       {-1},
 #line 177 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str468,             36000},
+#line 1803 "zonetab.h"
       {-1}, {-1}, {-1}, {-1}, {-1}, {-1}, {-1},
 #line 327 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str476,36000},
+#line 1807 "zonetab.h"
 #line 175 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str477,             -18000},
+#line 1810 "zonetab.h"
       {-1}, {-1}, {-1}, {-1},
 #line 163 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str482,             -10800},
+#line 1814 "zonetab.h"
       {-1}, {-1},
 #line 65 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str485, -9*3600},
+#line 1818 "zonetab.h"
 #line 162 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str486,                 10800},
+#line 1821 "zonetab.h"
       {-1}, {-1}, {-1}, {-1}, {-1},
 #line 236 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str492,28800},
+#line 1825 "zonetab.h"
       {-1}, {-1}, {-1}, {-1},
 #line 161 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str497,                  3600},
+#line 1829 "zonetab.h"
       {-1}, {-1}, {-1}, {-1}, {-1}, {-1}, {-1}, {-1}, {-1},
       {-1}, {-1}, {-1}, {-1}, {-1}, {-1}, {-1}, {-1}, {-1},
       {-1}, {-1}, {-1}, {-1}, {-1}, {-1}, {-1}, {-1}, {-1},
@@ -1522,16 +1833,20 @@ zonetab (register const char *str, register size_t len)
       {-1}, {-1}, {-1}, {-1}, {-1}, {-1},
 #line 180 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str540,                3600},
+#line 1837 "zonetab.h"
       {-1}, {-1}, {-1}, {-1}, {-1}, {-1}, {-1}, {-1}, {-1},
       {-1}, {-1}, {-1}, {-1}, {-1}, {-1}, {-1}, {-1}, {-1},
       {-1}, {-1}, {-1}, {-1},
 #line 62 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str563, -8*3600},
+#line 1843 "zonetab.h"
       {-1}, {-1},
 #line 107 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str566,12*3600},
+#line 1847 "zonetab.h"
 #line 142 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str567,                   0},
+#line 1850 "zonetab.h"
       {-1}, {-1}, {-1}, {-1}, {-1}, {-1}, {-1}, {-1}, {-1},
       {-1}, {-1}, {-1}, {-1}, {-1}, {-1}, {-1}, {-1}, {-1},
       {-1}, {-1}, {-1}, {-1}, {-1}, {-1}, {-1}, {-1}, {-1},
@@ -1540,6 +1855,7 @@ zonetab (register const char *str, register size_t len)
       {-1}, {-1}, {-1}, {-1}, {-1}, {-1},
 #line 141 "zonetab.list"
       {(int)(size_t)&((struct stringpool_t *)0)->stringpool_str619,              -10800}
+#line 1859 "zonetab.h"
     };
 
   if (len <= MAX_WORD_LENGTH && len >= MIN_WORD_LENGTH)
@@ -1562,3 +1878,4 @@ zonetab (register const char *str, register size_t len)
 }
 #line 330 "zonetab.list"
 
+#line 1882 "zonetab.h"
