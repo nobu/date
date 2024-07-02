@@ -1,22 +1,42 @@
-#!ruby -p
+#!ruby
 
-BEGIN {
-  if ARGV.first == '-o'
+def usage
+  abort "usage: #$0 [-o output] [-n name] gperf ..."
+end
+
+$output = nil
+$name = nil
+until ARGV.empty?
+  case ARGV.first
+  when '-o'
+    raise "-o given twice" if $output
     ARGV.shift
     STDOUT.reopen($output = ARGV.shift, "w")
+  when '-n'
+    ARGV.shift
+    usage unless $name = ARGV.shift
+  when '--'
+    ARGV.shift
+    break
+  when /\A-/
+    usage
+  else
+    break
   end
-  lines = 2
-}
-END {
-  File.unlink($output) if $! and $output and File.exist?($output)
-}
-
-if (~/^\w*hash/)...(~/^}/)
-  $_.sub!(/ (?:hval =|return) \K/, '(unsigned int)')
 end
-if ~/^struct \w+;$/...~/__END__/
-  if ~/^()#line/...~// and !defined?($1)
-    $_ += "#line #{$<.lineno + lines} #{($output || "-").dump}\n"
+usage if ARGV.empty?
+$name = ($name || $output || "-").dump
+IO.popen(ARGV) do |gperf|
+  lines = 1
+  gperf.each do |line|
+    if (/^\w*hash/ =~ line)...(/^}/ =~ line)
+      line.sub!(/ (?:hval =|return) \K(?=len)/, '(unsigned int)')
+    end
+    puts line
     lines += 1
+    if ((/^struct \w+;$/ =~ line)...false)
+      if line.start_with?("#line")..((puts "#line #{lines += 1} #{$name}\n"; true) unless line.start_with?("#line"))
+      end
+    end
   end
 end
