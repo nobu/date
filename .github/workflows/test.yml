@@ -41,11 +41,11 @@ jobs:
     steps:
     - uses: actions/checkout@v5
     - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
+      uses: ruby/setup-ruby-pkgs@v1
       with:
         ruby-version: ${{ matrix.ruby }}
         bundler-cache: true # 'bundle install' and cache
-    - run: choco install gperf
-      if: ${{ matrix.ruby == 'mswin' }}
+        msys2: gperf
+        choco: gperf
     - name: Run test
       run: bundle exec rake compile test
