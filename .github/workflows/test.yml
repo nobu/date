@@ -7,36 +7,13 @@ on:
     - cron: '10 3 * * *'
 
 jobs:
-  ruby-versions:
-    uses: ruby/actions/.github/workflows/ruby_versions.yml@master
-    with:
-      engine: cruby-truffleruby
-      min_version: 2.6
-
   build:
     if: ${{ startsWith(github.repository, 'ruby/') || github.event_name != 'schedule' }}
     name: build (${{ matrix.ruby }} / ${{ matrix.os }})
-    needs: ruby-versions
     strategy:
       matrix:
-        ruby: ${{ fromJson(needs.ruby-versions.outputs.versions) }}
-        os: [ ubuntu-latest, macos-latest, windows-latest ]
-        exclude:
-          - ruby: head
-            os: windows-latest
-          - ruby: truffleruby # need truffleruby 24.2+
-            os: ubuntu-latest
-          - ruby: truffleruby # need truffleruby 24.2+
-            os: macos-latest
-          - ruby: truffleruby
-            os: windows-latest
-          - ruby: truffleruby-head
-            os: windows-latest
-        include:
-          - ruby: mingw
-            os: windows-latest
-          - ruby: mswin
-            os: windows-2022
+        ruby: [ '3.3' ]
+        os: [ windows-latest ]
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v4
@@ -47,5 +24,12 @@ jobs:
         bundler-cache: true # 'bundle install' and cache
     - run: choco install gperf
       if: ${{ matrix.ruby == 'mswin' }}
+    - name: Run compile
+      run: bundle exec rake compile
+    - run: |
+        set `ruby -rdate -e 'puts $".grep(/date_core\.so/)'` `find -name date_core.so`
+        ls -l "$@"
+        nm "$@"
+      shell: bash
     - name: Run test
-      run: bundle exec rake compile test
+      run: bundle exec rake test
