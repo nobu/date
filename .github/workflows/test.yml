@@ -39,6 +39,10 @@ jobs:
             os: windows-2022
     runs-on: ${{ matrix.os }}
     steps:
+    - name: Config git
+      run: |
+        git config --global core.autocrlf false
+        git config --global core.eol lf
     - uses: actions/checkout@v5
     - name: Set up Ruby
       uses: ruby/setup-ruby-pkgs@v1
